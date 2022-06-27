@@ -1,0 +1,180 @@
+html,body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    height:100%;
+    width: 100%;
+    display: flex;
+}
+
+.modelos{
+    /*background-color: blue;*/
+    width: 40%;
+}
+/*MODELO DIRECTO*/
+.modelo_directo{
+    background-color: white;
+    display: flex;
+    margin: auto;
+    height: 57%;
+    border: 1px solid black;
+    margin: 2%;
+}
+
+.parametros_entrada{
+    /*background-color: green;*/
+    padding: 2%;
+    width: 30%;
+    height: 100%;
+}
+
+.etiqueta{
+    margin-top: 8%;
+}
+
+#boton_iniciar{
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+
+.matrices{
+    /*background-color: aqua;*/
+    width: 70%;
+    display: block;
+}
+
+.div_matriz{
+    /*background-color: aquamarine;*/
+    height: 33.3%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.matriz{
+    /*background-color: blueviolet;*/
+    display: block;
+    width: 40%;
+    font-size: small;
+}
+
+.img_matriz{
+    display: flex;
+    width: 15%;
+}
+
+tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+th{
+    width: 20%;
+}
+
+.tabla_matriz{
+    /*background-color: azure;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    font-size: large;
+}
+
+/*MODELO INVERSO*/
+.modelo_inverso{
+    background-color: white;
+    display: flex;
+    height: 38%;
+    border: 1px solid black;
+    margin: 2%;
+}
+
+.funciones{
+    /*background-color: orange;*/
+    width: 70%;
+}
+
+.funcion{
+    /*background-color: cyan;*/
+    font-size: x-large;
+    height: 10%;
+    margin: 11%;
+}
+
+/*IMAGENES DEL MODELO*/
+.img{
+    width: 95%;
+    height: 80%;
+    margin-left: 2.5%;
+    margin-top: 7%;
+}
+
+/*INDICADORES*/
+.indicadores{
+    /*background-color: orange;*/
+    width: 60%;
+}
+
+.modelo_botones{
+    background-color: white;
+    display: flex;
+    margin: auto;
+    height: 57%;
+    margin: 1.5%;
+}
+
+.modelo{
+    /*background-color: red;*/
+    width: 70%;
+    border: 1px solid black;
+}
+
+.botones{
+    /*background-color: aqua;*/
+    width: 30%;
+    display: block;
+}
+
+.etiqueta_botones{
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+#boton_opcion{
+    margin: 5%;
+    width: 90%;
+}
+
+.botones_opciones{
+    /*background-color: green;*/
+    display: block;
+    height: 58%;
+    padding: 1%;
+    margin-left: 5%;
+    border: 1px solid black;
+}
+
+.botones_terminal{
+    /*background-color: yellow;*/
+    display: block;
+    height: 39.5%;
+    padding: 1%;
+    margin-top: 4%;
+    margin-left: 5%;
+    border: 1px solid black;
+}
+
+/*INDICADORES*/
+.sec_indicadores{
+    background-color: white;
+    display: flex;
+    height: 37.5%;
+    border: 1px solid black;
+    margin: 1.5%;
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--
+        <div>
+            <h1 id="puerto">Puerto:  </h1>
+            <input type="button" class="btn btn-primary" id="bt1" value="ENCONTRAR ARDUINO" onclick="obtener_puerto()">
+        </div>
+    -->
+    <!--
+        <div>
+            <label for="motor">Motor: </label>
+            <input type="text" id="motor" name="motor"> 
+
+            <label for="direccion">Direccion: </label>
+            <input type="text" id="direccion" name="direccion"> 
+
+            <label for="pulsos">Pulsos: </label>
+            <input type="text" id="pulsos" name="pulsos"> 
+            
+        </div>
+
+        <div>
+            <input type="button" class="btn btn-primary" id="bt1" value="Motor 1" onclick="movimiento_motor()">
+        </div>
+    -->
+
+    <!--MODELOS-->
+    <div class="modelos">
+        <!--MODELO DIRECTO-->
+        <div class="modelo_directo">
+            <!--PARAMETROS DE ENTRAD-->
+            <div class="parametros_entrada">
+                <label class="etiqueta" for="">Valor 1</label>
+                <input type="email" class="form-control" id="theta" placeholder="Ingresa el valor 1">
+
+                <label class="etiqueta" for="">Valor 2</label>
+                <input type="email" class="form-control" id="d" placeholder="Ingresa el valor 2">
+
+                <label class="etiqueta" for="">Valor 3</label>
+                <input type="email" class="form-control" id="a" placeholder="Ingresa el valor 3">
+
+                <label class="etiqueta" for="">Valor 4</label>
+                <input type="email" class="form-control" id="alpha" placeholder="Ingresa el valor 4">
+
+                <input type="button" class="btn btn-primary" id="boton_iniciar" value="Motor 1" onclick="modelo_directo(); grados_pulsos();">
+            </div>
+
+            <!--MATRICES-->
+            <div class="matrices">
+                <div class="div_matriz">
+                    <div class="matriz">
+                        <label>Matriz A</label>
+                        <div style="display: flex;">
+                            <img class="img_matriz" src="ca.png" alt="">
+                            <table class="tabla_matriz" id="mat1" >
+                            </table>
+                            <img class="img_matriz" src="cc.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="matriz">
+                        <label>Matriz B</label>
+                        <div style="display: flex;">
+                            <img class="img_matriz" src="ca.png" alt="">
+                            <table class="tabla_matriz" id="mat2">
+                            </table>
+                            <img class="img_matriz" src="cc.png" alt="">
+                        </div>   
+                    </div>
+                </div>
+
+                <div class="div_matriz">
+                    <div class="matriz">
+                        <label>Matriz C</label>
+                        <div style="display: flex;">
+                            <img class="img_matriz" src="ca.png" alt="">
+                            <table class="tabla_matriz" id="mat3">  
+                            </table>
+                            <img class="img_matriz" src="cc.png" alt="">
+                        </div>
+                        
+                    </div>
+
+                    <div class="matriz">
+                        <label>Matriz D</label>
+                        <div style="display: flex;">
+                            <img class="img_matriz" src="ca.png" alt="">
+                            <table class="tabla_matriz" id="mat4">    
+                            </table>
+                            <img class="img_matriz" src="cc.png" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="div_matriz">
+                    <div class="matriz">
+                        <label>Matriz T</label>
+                        <div style="display: flex;">
+                            <img class="img_matriz" src="ca.png" alt="">
+                            <table class="tabla_matriz" id="mat5">
+                            </table>
+                            <img class="img_matriz" src="cc.png" alt="">
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODELO INVERSO-->
+        <div class="modelo_inverso">
+            <div class="parametros_entrada">
+                <label class="etiqueta" for="">Valor 1</label>
+                <input type="email" class="form-control" id="" placeholder="Ingresa el valor 1">
+
+                <label class="etiqueta" for="">Valor 2</label>
+                <input type="email" class="form-control" id="" placeholder="Ingresa el valor 2">
+
+                <label class="etiqueta" for="">Valor 3</label>
+                <input type="email" class="form-control" id="" placeholder="Ingresa el valor 3">
+
+                <button type="button" class="btn btn-primary" id="boton_iniciar">Iniciar</button>
+            </div>
+            
+            <div class="funciones">
+                <div class="funcion">
+                    <label for="">X = </label>
+                    <label for=""></label>
+                </div>
+
+                <div class="funcion">
+                    <label for="">Y = </label>
+                    <label for=""></label>
+                </div>
+
+                <div class="funcion">
+                    <label for="">Z = </label>
+                    <label for=""></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--INDICADORES-->
+    <div class="indicadores">
+        <div class="modelo_botones">
+            <div class="modelo">
+                <img class="img" id="img" src="M0.png" alt="">
+            </div>
+
+            <div class="botones">
+                <div class="botones_opciones">
+                    <label class="etiqueta_botones" for="">Opciones</label>
+                    <button type="button" class="btn btn-primary" id="boton_opcion" onclick="home()">Home</button>
+                    <button type="button" class="btn btn-primary" id="boton_opcion">Pausar</button>
+                    <button type="button" class="btn btn-primary" id="boton_opcion">Detener</button>
+                </div>
+
+                <div class="botones_terminal">
+                    <label class="etiqueta_botones" for="">Elemento Terminal</label>
+                    <button type="button" class="btn btn-primary" id="boton_opcion" onclick="elemento_terminal_abrir()">Abrir</button>
+                    <button type="button" class="btn btn-primary" id="boton_opcion" onclick="elemeto_terminal_cerrar()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec_indicadores">
+
+        </div>
+    </div>
+
+    <script>
+        eel.expose(mostar_puerto);
+        function mostar_puerto(puerto){
+            document.getElementById('puerto').innerHTML = 'Puerto: ' + puerto;
+        }
+
+        function obtener_puerto(){
+            eel.encontara_conexion();
+        }
+
+        //MOVER EL MOTOR CON LOS DATOS INGRESADOS 
+        function movimiento_motor(){
+            var motor =  document.getElementById("motor").value;
+            var direccion =  document.getElementById("direccion").value;
+            var pulsos =  document.getElementById("pulsos").value;
+
+            eel.movimiento(motor, direccion, pulsos);
+        }
+
+        
+
+        //GENERAR LOS VALORES DE LAS MATRICES DEL MODELO DIRECTO
+        function modelo_directo(){
+            var q1 = document.getElementById("theta").value;
+            var q2 = document.getElementById("d").value;
+            var q3 = document.getElementById("a").value;
+            var q4 = document.getElementById("alpha").value;
+
+            //MATRICES
+            q1.length == 0 ? q1 = 0:q1=q1;
+            q4.length == 0 ? q4 = 0:q4=q4;  
+            q2.length == 0 ? q2 = 0:q2=q2;
+            q3.length == 0 ? q3 = 0:q3=q3;
+
+
+            var matriz1 = eel.modelo_directo(parseFloat(q1) + 90, 18.5, 0, 90, 1);
+            var matriz2 = eel.modelo_directo(parseFloat(q2) +90, 6.7, 0, 90, 2);
+            var matriz3 = eel.modelo_directo(0, parseFloat(q3) + 11.75, 0, 0, 3);
+            var matriz4 = eel.modelo_directo(q4, 10, 0, 0, 4);
+
+            eel.matriz_t();
+        }
+    
+        eel.expose(mostrar_matriz);
+        function mostrar_matriz(matriz, num){
+            console.log(num);
+            console.log(matriz);
+            let tabla = document.querySelector(`#mat${num}`);
+            tabla.innerHTML = "";
+
+            for(i = 0; i < 4; i++){
+                var temp = document.createElement("tr");
+                for(j = 0; j < 4; j++){
+                    var tem2 = document.createElement("th");
+                    tem2.innerHTML = matriz[i][j].toFixed(1);
+                    temp.appendChild(tem2);
+                }
+                tabla.appendChild(temp);
+            }    
+        }
+
+        //GRADOS A PULSOS
+        function grados_pulsos(){
+            var q1 = document.getElementById("theta").value;
+            
+           
+            var q2 = document.getElementById("d").value;
+
+
+            var q3 = document.getElementById("a").value;
+            var q4 = document.getElementById("alpha").value;
+
+            if(q1.length > 0){
+                muestra_img();
+                eel.grados_pulsos(q1,1,8600,360);
+            }if(q2.length > 0){
+                setTimeout(() => {
+                    document.getElementById("img").src = "M2.png";
+                    eel.grados_pulsos(q2,2,8800,360);
+                }, 100);
+            }if(q3.length > 0){
+                document.getElementById("img").src = "M3.png";
+                eel.grados_pulsos(q3,3,60,9);
+            }if(q4.length > 0){
+                document.getElementById("img").src = "M4.png";
+                eel.grados_pulsos(q4,4,24,360);
+            }
+        }
+
+        function muestra_img(){
+            document.getElementById("img").src = "M1.png";
+        }
+
+        //ELEMENTO TERMINAL
+        function elemento_terminal_abrir(){
+            document.getElementById("img").src = "M5.png";
+            eel.elemeto_terminal("A");
+            setTimeout(() => {
+                document.getElementById("img").src = "M0.png";
+            }, 3000);
+        }
+
+        function elemeto_terminal_cerrar(){
+            document.getElementById("img").src = "M5.png";
+            eel.elemeto_terminal("C");
+            setTimeout(() => {
+                document.getElementById("img").src = "M0.png";
+            }, 3000);   
+        }
+
+        function home(){
+            eel.grados_pulsos(0,1,8600,360);
+            eel.grados_pulsos(0,2,8800,360);
+            eel.grados_pulsos(0,3,60,9);
+            eel.grados_pulsos(0,4,24,360);
+        }
+
+    </script>
+</body>
+</html>
